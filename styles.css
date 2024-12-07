@@ -21,3 +21,16 @@
     font-style: normal;
     font-display: swap;
 }
+
+:root {
+    --color-white: #ffffff;
+    --color-black: #1b1c21;
+    --color-blue: #41f6d7;
+    --color-hover-blue: #b8ffec;
+
+    --border-radius: 6px;
+
+    --font-family-main: 'TT Lakes', sans-serif;
+
+    --slide-menu-height: 40px;
+}
