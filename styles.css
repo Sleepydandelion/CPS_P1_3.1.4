@@ -24,6 +24,7 @@
 
 :root {
     --color-white: #ffffff;
+    --color-gray: #7e7e82;
     --body-color: #f8f8f8;
     --text-color: #1b1c21;
     --color-blue: #41f6d7;
@@ -34,8 +35,12 @@
 @media screen and (max-width: 320px) {
     body {
         margin: 0;
+        padding: 0;
         font-family: 'TT Lakes', sans-serif;
+        width: 100%;
+        height: 1vh;
         font-size: 14px;
+        font-weight: regular;
         background-color: var(--body-color);
         color: var(--text-color);
     }
@@ -45,7 +50,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 320px;
+        width: 100%;
         height: 88px;
         padding: 15px;
     }
@@ -67,8 +72,9 @@
     }
 
     main {
-        width: 320px;
+        width: 100%;
         height: 509px;
+        box-sizing: border-box;
     }
 
     .main__title {
@@ -91,5 +97,69 @@
         font-family: 'TT Lakes', sans-serif;
         font-size: 28px;
         font-weight: bold;
+    }
+
+    .slide-menu__list {
+        box-sizing: border-box;
+        padding: 15px
+        height: 40px;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        overflow-y: hidden;
+    }
+
+    .slide-menu__button {
+        box-sizing: border-box;
+        width: 246px;
+        height: 40px;
+        font-family: 'TT-Lakes', sans-serif;
+        font-size: 16px;
+        font-weight: medium;
+        color: var(--color-gray);
+        white-space: nowrap;
+        padding-left: 10px;
+        margin: 5px;
+        text-align: center;
+    }
+
+    .slide-menu__button:hover {
+        background-color: var(--color-white);
+        border: 1px solid var(--color-hover-blue);
+    }
+
+    .main-info__about {
+        padding: 5px;
+        width: 287px;
+        height: 90px;
+        font-weight: regular;
+    }
+
+    .main-info__read-more {
+        box-sizing: border-box;
+        display: flex;
+        width: 132px;
+        height: 24px;
+        white-space: nowrap;
+        align-items: center;
+    }
+
+    .main-info__read-more a {
+        font-size: 16px;
+        font-weight: medium;
+        text-decoration: none;
+        color: var(--text-color);
+        position: relative;
+    }
+    .main-info__expand {
+        width: 24px;
+        height: 24px;
+    }
+
+    .main-info__pic {
+        box-sizing: border-box;
+        width: 100%;
+        height: 176px;
+        margin-top: 10px;
     }
 }
