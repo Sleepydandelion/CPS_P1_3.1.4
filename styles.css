@@ -25,10 +25,11 @@
 :root {
     --color-white: #ffffff;
     --color-gray: #7e7e82;
-    --body-color: #f8f8f8;
-    --text-color: #1b1c21;
     --color-blue: #41f6d7;
     --color-hover-blue: #b8ffec;
+    --body-color: #f8f8f8;
+    --text-color: #1b1c21;
+
     --line-color: #eaeaea;
 
     --font-regular: 400;
@@ -58,7 +59,7 @@ body {
 }
 
 .upper-menu a {
-    margin: 24px 16px;
+    margin: 24px 8px;
 }
 
 .upper-menu__first-block {
@@ -71,7 +72,7 @@ body {
     align-items: center;
 }
 
-@media screen and (min-width: 0px) and (max-width: 600px) {
+@media screen and (min-width: 0px) and (max-width: 500px) {
     .upper-menu__icons-tablet {
         display: none;
     }
@@ -94,10 +95,12 @@ body {
     height: 51px;
 }
 
+.upper-menu__first-line,
 .upper-menu__second-line {
     width: 2px;
     height: 32px;
     background-color: var(--line-color);
+    margin: 0 10px;
 }
 
 main {
@@ -119,7 +122,7 @@ main {
 .main__highlight {
     width: 4px;
     height: 40px;
-    margin-right: 20px
+    margin-right: 10px;
     background-color: var(--color-blue);
 }
 
@@ -159,11 +162,46 @@ main {
     border: 2px solid var(--color-hover-blue);
 }
 
+.main-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .main-info__about {
-    margin: 16px;
-    width: 287px;
+    margin: 0 16px;
+
+    white-space: normal;
     height: 90px;
     font-weight: var(--font-regular);
+}
+
+.main-info__about-continue {
+    margin: 0 16px;
+    display: hidden;
+    font-weight: var(--font-regular);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1119px) {
+    .main-info {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .main-info__first-block {
+        width: 50%;
+    }
+
+    .main-info__second-block {
+        width: 50%;
+        margin: 0;
+    }
+
+    .main-info__about-continue {
+        margin: 0 16px;
+        display: hidden;
+        font-weight: var(--font-regular);
+    }
 }
 
 .main-info__read-more {
@@ -191,5 +229,4 @@ main {
     box-sizing: border-box;
     width: 100%;
     height: auto;
-    margin-top: 16px;
 }
