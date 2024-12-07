@@ -24,7 +24,48 @@
 
 :root {
     --color-white: #ffffff;
-    --color-black: #1b1c21;
+    --body-color: #f8f8f8;
+    --text-color: #1b1c21;
     --color-blue: #41f6d7;
     --color-hover-blue: #b8ffec;
+    --line-color: #eaeaea;
+}
+
+@media screen and (max-width: 320px) {
+    body {
+        font-family: 'TT Lakes', sans-serif;
+        font-size: 14px;
+        background-color: var(--body-color);
+        color: var(--text-color);
+    }
+
+    .upper-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .upper-menu img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .upper-menu__logo-button img {
+        width: 97px;
+        height: 51px;
+    }
+
+    upper-menu__repair-button::before {
+        content: " ";
+        width: 2px;
+        height: 32px;
+        background-color: var(--line-color);
+        display: inline-block;
+    }
+
+    h1 {
+        font-family: "TT Lakes"
+        font-size: 28px;
+        font-weight: bold;
+    }
 }
