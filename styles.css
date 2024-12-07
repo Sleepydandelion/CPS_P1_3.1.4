@@ -33,6 +33,7 @@
 
 @media screen and (max-width: 320px) {
     body {
+        margin: 0;
         font-family: 'TT Lakes', sans-serif;
         font-size: 14px;
         background-color: var(--body-color);
@@ -40,9 +41,13 @@
     }
 
     .upper-menu {
+        box-sizing: border-box;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 320px;
+        height: 88px;
+        padding: 15px;
     }
 
     .upper-menu img {
@@ -55,16 +60,14 @@
         height: 51px;
     }
 
-    upper-menu__repair-button::before {
-        content: " ";
+    .upper-menu__line {
         width: 2px;
         height: 32px;
         background-color: var(--line-color);
-        display: inline-block;
     }
 
     h1 {
-        font-family: "TT Lakes"
+        font-family: 'TT Lakes', sans-serif;
         font-size: 28px;
         font-weight: bold;
     }
