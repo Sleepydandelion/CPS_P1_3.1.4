@@ -1,3 +1,17 @@
+// 1. upper-menu -> header
+// 2. upper-menu__first-block -> header__block + header__menu
+// 3. upper-menu__second-block -> header__block + header__actions
+// 4. move media inside classes
+// 5. main__highlight превдоэлементом
+// 6. remove main__title
+// 7. slide-menu -> navigation
+// 8. company-info -> company-info
+// 9. company-info__first-block -> company-info__text-block
+// 10. rewrite all pics / texts and other bullshit classes
+// 11. html change lang to ru and alt langs
+// 12. remove font-size from body
+// 13. remove (screen) from media
+
 @font-face {
     font-family: 'TT Lakes';
     src: url(./fonts/TTLakes-Regular.woff2) format('woff2');
@@ -43,13 +57,11 @@ body {
     font-family: 'TT Lakes', sans-serif;
     width: 100%;
     min-height: 100vh;
-    font-size: 14px;
-    font-weight: regular;
     background-color: var(--body-color);
     color: var(--text-color);
 }
 
-.upper-menu {
+header {
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -58,42 +70,37 @@ body {
     height: 88px;
 }
 
-.upper-menu a {
+.header__button {
     margin: 24px 8px;
 }
 
-.upper-menu__first-block {
-    display: flex;
-    align-items: center;
-}
-
-.upper-menu__second-block {
+.header__block {
     display: flex;
     align-items: center;
 }
 
 @media screen and (min-width: 0px) and (max-width: 500px) {
-    .upper-menu__icons-tablet {
+    .header__actions {
         display: none;
     }
 
-    .upper-menu__first-line {
+    .header__first-line {
         display: none;
     }
 }
 
-.upper-menu img {
+.header__button {
     width: 40px;
     height: 40px;
 }
 
-.upper-menu__logo-button img {
+.header__logo-button {
     width: 97px;
     height: 51px;
 }
 
-.upper-menu__first-line,
-.upper-menu__second-line {
+.header__first-line,
+.header__second-line {
     width: 2px;
     height: 32px;
     background-color: var(--line-color);
@@ -108,7 +115,7 @@ main {
     flex-direction: column;
 }
 
-.main__title {
+.title-block {
     width: 304px;
     height: 40px;
     display: flex;
@@ -116,22 +123,26 @@ main {
     align-items: center;
 }
 
-.main__highlight {
-    width: 4px;
-    height: 40px;
-    margin-right: 10px;
-    background-color: var(--color-blue);
-}
-
-.main__title h1 {
+.title-block__heading {
     width: 288px;
     height: 40px;
     font-family: 'TT Lakes', sans-serif;
     font-size: 28px;
     font-weight: var(--font-bold);
+    position: relative;
+    text-align: center;
 }
 
-.slide-menu__list {
+.title-block__heading::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background: var(--color-blue);
+}
+
+.navigation__list {
     box-sizing: border-box;
     height: 40px;
     list-style: none;
@@ -141,8 +152,8 @@ main {
     overflow-y: hidden;
 }
 
-@media screen and (min-width: 1120px) {
-    .slide-menu__list {
+@media (min-width: 1120px) {
+    .navigation__list {
         flex-wrap: wrap;
         justify-content: flex-start;
         margin-bottom: 16px;
@@ -150,11 +161,9 @@ main {
     }
 }
 
-
-
-.slide-menu__button {
+.navigation__button {
     box-sizing: border-box;
-    display: inline-block
+    display: inline-block;
     width: 100%;
     height: 40px;
     font-family: 'TT-Lakes', sans-serif;
@@ -167,72 +176,79 @@ main {
     border-radius: 6px;
 }
 
-.slide-menu__button:hover {
+.navigation__button:hover {
     background-color: var(--color-white);
     border: 2px solid var(--color-hover-blue);
 }
 
-.main-info {
-    margin: 16px 16px;
+.company-info {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin: 0;
+    margin-left: 16px;
 }
 
-.main-info__about {
-    white-space: normal;
-    height: 90px;
+.company-info__about {
+    font-size: 14px;
     font-weight: var(--font-regular);
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-.main-info__about-continue {
+.company-info__about-continue {
     display: hidden;
+    font-size: 14px;
     font-weight: var(--font-regular);
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1119px) {
-    .main-info {
+@media (min-width: 768px) {
+    .company-info {
         flex-direction: row;
         align-items: flex-start;
     }
 
-    .main-info__first-block {
+    .company-info__first-block {
         width: 50%;
     }
 
-    .main-info__second-block {
+    .company-info__second-block {
         width: 50%;
-        margin: 0;
     }
 
-    .main-info__about-continue {
+    .company-info__about-continue {
         display: hidden;
         font-weight: var(--font-regular);
     }
 }
 
-.main-info__read-more {
+.company-info__read-more {
     box-sizing: border-box;
     display: flex;
     width: 132px;
-    height: 24px;
-    white-space: nowrap;
     align-items: center;
+    justify-content: flex-start;
 }
 
-.main-info__read-more a {
+.company-info__button {
+    margin: 0;
+    padding: 0;
     font-size: 16px;
-    font-weight: var(--font-medium);
-    text-decoration: none;
+    font-weight: var(--font-regular);
+    border: none;
     color: var(--text-color);
+    background-color: var(--body-color);
     position: relative;
 }
-.main-info__expand {
+
+.company-info__expand {
     width: 24px;
     height: 24px;
 }
 
-.main-info__pic {
+.company-info__logo {
     width: 100%;
     height: auto;
 }

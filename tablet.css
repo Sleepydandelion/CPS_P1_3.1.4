@@ -1,6 +1,0 @@
-@media screen and (max-width: 768px) {
-    .upper-menu_line-tablet {
-        display: flex;
-        justify-content: flex-end;
-    }
-}
