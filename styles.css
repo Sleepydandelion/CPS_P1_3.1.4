@@ -104,7 +104,7 @@ main {
 }
 
 .title-block {
-    width: 304px;
+    width: 100%;
     height: 40px;
     display: flex;
     justify-content: space-between;
@@ -112,13 +112,17 @@ main {
 }
 
 .title-block__heading {
-    width: 288px;
-    height: 40px;
+    width: 100%;
     font-family: 'TT Lakes', sans-serif;
     font-size: 28px;
     font-weight: 700;
     position: relative;
     text-align: center;
+    margin: 0;
+
+    @media (min-width: 1120px) {
+        width: 30%;
+    }
 }
 
 .title-block__heading::before {
@@ -128,6 +132,33 @@ main {
     width: 4px;
     height: 100%;
     background: var(--color-blue);
+}
+
+.title-block__buttons {
+    display: none;
+
+    @media (min-width: 1120px) {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.title-block__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text-color);
+
+    @media (min-width: 1120px) {
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 1120px) {
+    .title-block__button-text {
+        margin: 6px;
+    }
 }
 
 .navigation__list {
@@ -140,6 +171,7 @@ main {
     overflow: scroll;
 
     @media (min-width: 1120px) {
+        box-sizing: border-box;
         display: flex;
         height: 82px;
         flex-wrap: wrap;
@@ -232,6 +264,7 @@ main {
     width: 132px;
     align-items: center;
     justify-content: flex-start;
+    margin-top: 20px;
 }
 
 .company-info__button {
@@ -251,7 +284,7 @@ main {
 }
 
 .company-info__logo {
-    width: 100%;
+    width: 90%;
     height: auto;
     border-radius: 6px;
 }
