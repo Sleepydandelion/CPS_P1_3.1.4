@@ -79,9 +79,6 @@ body {
 
     .upper-menu__first-line {
         display: none;
-        width: 2px;
-        height: 32px;
-        background-color: var(--line-color);
     }
 }
 
@@ -153,6 +150,8 @@ main {
     }
 }
 
+
+
 .slide-menu__button {
     box-sizing: border-box;
     display: inline-block
@@ -174,7 +173,7 @@ main {
 }
 
 .main-info {
-    margin: 0 16px;
+    margin: 16px 16px;
     display: flex;
     flex-direction: column;
     width: 100%;
