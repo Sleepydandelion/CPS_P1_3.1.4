@@ -173,6 +173,7 @@ main {
     white-space: nowrap;
     padding: 8px 16px;
     text-align: center;
+    border: 2px solid var(--body-color);
     border-radius: 6px;
 }
 
